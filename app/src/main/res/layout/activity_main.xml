@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/orange">
+
+    <TextView android:id="@+id/welcomeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/welcome_text_view"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView android:id="@+id/chooseTextView"
+        android:layout_below="@id/welcomeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/choose_text_view"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/white"/>
+
+    <TextView android:id="@+id/difficultyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/difficulty_text_view"
+        android:layout_below="@id/chooseTextView"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"/>
+
+    <RadioGroup android:id="@+id/radioWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/difficultyTextView"
+        android:layout_marginTop="6dp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+            <RadioButton android:id="@+id/easyRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/easy_text_view"
+                android:textColor="@color/white"/>
+
+            <RadioButton android:id="@+id/hardRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/hard_text_view"
+                android:textColor="@color/white"/>
+
+    </RadioGroup>
+
+    <LinearLayout android:id="@+id/wrapper2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioWrapper"
+        android:layout_marginTop="15dp">
+
+        <TextView android:id="@+id/numberRangeTextView"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/number_range_text_view"
+            android:textColor="@color/white"/>
+
+        <EditText android:id="@+id/numberRangeEditText"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:digits="0123456789"
+            android:maxLength="6"
+            android:cursorVisible="false"
+            android:imeOptions="actionDone"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/wrapper3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wrapper2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView android:id="@+id/roundsTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rounds_text_view"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/white"/>
+
+        <Spinner android:id="@+id/roundsSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:entries="@array/rounds_entries_spinner"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/wrapper4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wrapper3"
+        android:layout_marginTop="6dp">
+
+        <Button android:id="@+id/additionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/addition_button"
+            android:background="@drawable/button_background"
+            android:layout_marginRight="20dp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button android:id="@+id/subtractionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/subtraction_button"
+            android:background="@drawable/button_background"
+            style="?android:attr/borderlessButtonStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/wrapper5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wrapper4"
+        android:layout_marginTop="20dp">
+
+        <Button android:id="@+id/multiplicationButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/multiplication_button"
+            android:background="@drawable/button_background"
+            android:layout_marginRight="20dp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button android:id="@+id/divisionButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/division_button"
+            android:background="@drawable/button_background"
+            style="?android:attr/borderlessButtonStyle"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

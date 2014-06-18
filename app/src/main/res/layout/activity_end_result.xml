@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/lime">
+
+    <TextView android:id="@+id/pointsReachedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textSize="16sp"/>
+
+    <LinearLayout android:id="@+id/modeWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pointsReachedTextView"
+        android:layout_marginTop="30dp">
+
+        <TextView android:id="@+id/modeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+        <TextView android:id="@+id/difficultyResultTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    <LinearLayout android:id="@+id/numberRangeWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/modeWrapper"
+        android:layout_marginTop="20dp">
+
+        <TextView android:id="@+id/numberRangeResultTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+        <TextView android:id="@+id/playedRoundsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/timeWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberRangeWrapper"
+        android:layout_marginTop="20dp">
+
+        <TextView android:id="@+id/timeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+        <TextView android:id="@+id/pointsTimeRatioTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/highscoreTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/timeWrapper"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"/>
+
+    <TextView android:id="@+id/currentHighscoreTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_below="@id/highscoreTextView"
+        android:layout_marginTop="12dp"/>
+
+    <Button android:id="@+id/saveHighscoreButton"
+        android:layout_below="@id/currentHighscoreTextView"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/save_highscore_button"
+        android:background="@drawable/button_background"/>
+
+    <LinearLayout android:id="@+id/buttonWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saveHighscoreButton"
+        android:layout_marginTop="10dp">
+
+        <Button android:id="@+id/playAgainButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/play_again_button"
+            android:background="@drawable/button_background"
+            android:layout_marginRight="10dp"
+            style="?android:attr/borderlessButtonStyle"/>
+
+        <Button android:id="@+id/highscoreButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/highscore_button"
+            android:background="@drawable/button_background"
+            style="?android:attr/borderlessButtonStyle"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

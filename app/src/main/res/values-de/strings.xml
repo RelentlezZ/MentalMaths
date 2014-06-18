@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--German Translation-->
+
+    <string name="app_name">Kopfrechnen!</string>
+
+    <string name="title_activity_exercises">Aufgaben</string>
+    <string name="title_activity_end_result">Auswertung</string>
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_credits">Credits</string>
+    <string name="action_restart">Neustart</string>
+    <string name="action_reset">Highscores zurücksetzen</string>
+    <string name="action_fun">Extra Spaß</string>
+
+    <string name="welcome_text_view">Willkommen beim Kopfrechentrainer!</string>
+    <string name="choose_text_view">Wähle einfach einen Schwierigkeitsgrad und den Zahlenbereich(für die Ergebnisse) in dem du rechnen möchtest.</string>
+
+    <string name="difficulty_text_view">Schwierigkeitsgrad</string>
+    <string name="easy_text_view">Einfach</string>
+    <string name="hard_text_view">Schwer</string>
+
+    <string name="number_range_text_view">Zahlenbereich (bis):</string>
+
+    <string name="rounds_text_view">Wie viele Aufgaben möchtest du machen?</string>
+
+    <string-array name="rounds_entries_spinner">
+
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+
+    </string-array>
+
+    <string name="number_range_toast_error">Zahlenbereich wird benötigt</string>
+    <string name="too_easy_toast">Der Zahlenbereich ist sogar für dich zu einfach!</string>
+    <string name="multiplication_toast">Schwierigkeitsgrad wurde auf Einfach gesetzt wegen kleinem Zahlenbereich</string>
+    <string name="division_not_available_toast">Schwierigkeitsgrad Schwer nicht verfügbar für Divison. Schwierigkeitsgrad wurde auf Einfach gesetzt</string>
+    <string name="credits_toast">This App was created by Sebastian Maier</string>
+    <string name="need_that_toast">Das hast du auch nötig!</string>
+
+    <string name="addition_button">Addition</string>
+    <string name="subtraction_button">Subtraktion</string>
+    <string name="multiplication_button">Multiplikation</string>
+    <string name="division_button">Division</string>
+
+    <string name="exercise_number_text_view">Aufgabe</string>
+    <string name="check_button">Prüfen</string>
+
+    <string name="result_toast_error">Kein Ergebnis eingegeben</string>
+
+    <string name="right_toast">Richtig!</string>
+    <string name="wrong_toast">Falsch!</string>
+
+    <string name="points_text_view">Punkte:</string>
+
+    <string name="button_one">1</string>
+    <string name="button_two">2</string>
+    <string name="button_three">3</string>
+    <string name="button_four">4</string>
+    <string name="button_five">5</string>
+    <string name="button_six">6</string>
+    <string name="button_seven">7</string>
+    <string name="button_eight">8</string>
+    <string name="button_nine">9</string>
+    <string name="button_zero">0</string>
+    <string name="button_clear">C</string>
+    <string name="button_back_desc">Zurück</string>
+
+    <string name="reached_points_1_text_view">Du hast&#160;</string>
+    <string name="reached_points_2_text_view">&#160;von&#160;</string>
+    <string name="reached_points_3_text_view">&#160;Punkten erreicht.</string>
+
+    <string name="played_mode_text_view">Modus:&#160;</string>
+    <string name="difficulty_2_text_view">Schwierigkeitsgrad:&#160;</string>
+    <string name="number_range_2_text_view">Zahlenbereich (bis):&#160;</string>
+    <string name="rounds_2_text_view">Anzahl der Aufgaben:&#160;</string>
+    <string name="time_needed">Benötigte Zeit:&#160;</string>
+    <string name="seconds">&#160;Sekunden</string>
+    <string name="points_per_second">&#160;Punkte pro Sekunde:&#160;</string>
+
+    <string name="new_highscore">Neuer Highscore!</string>
+    <string name="can_do_better">Das kannst du besser!</string>
+
+    <string name="current_high_score">Aktueller Highscore:&#160;</string>
+    <string name="previous_high_score">Vorheriger Highscore:&#160;</string>
+    <string name="points_per_second_by">&#160;Punkte pro Sekunde, erzielt von&#160;</string>
+
+    <string name="save_highscore_button">Highscore speichern</string>
+    <string name="play_again_button">Erneut spielen</string>
+    <string name="highscore_button">Highscores</string>
+
+    <string name="name_hint">Name</string>
+    <string name="enter_name">Gib deinen Namen ein:</string>
+    <string name="save">Speichern</string>
+    <string name="dont_save">Doch nicht</string>
+    <string name="enter_name_first_toast">Gib erst deinen Namen ein</string>
+    <string name="saved">Erfolgreich gespeichert!</string>
+
+    <string name="title_activity_high_score">Highscores</string>
+
+    <string name="no_highscore_yet">Kein Highscore gefunden</string>
+
+    <string name="double_press_back">Drücke nochmal Zurück zum beenden</string>
+
+    <string name="app_name_english">Mental Maths</string>
+    <string name="created_by">Created by Sebastian Maier</string>
+    <string name="even_more_fun">Noch mehr extra Spaß!!!</string>
+    <string name="no_internet_connection">Internetverbindung benötigt</string>
+
+</resources>
