@@ -6,15 +6,12 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -39,7 +36,7 @@ public class MainActivity extends Activity {
     private SharedPreferences enteredParams;
 
     //Declare views
-    EditText numberRangeEditText;
+    Spinner numberRangeSpinner;
     Spinner roundsSpinner;
     Button additionButton;
     Button subtractionButton;
@@ -80,10 +77,49 @@ public class MainActivity extends Activity {
         radioGroup = (RadioGroup) findViewById(R.id.radioWrapper);
         radioGroup.setOnCheckedChangeListener(onDifficultyRadioChanged);
 
-        numberRangeEditText = (EditText) findViewById(R.id.numberRangeEditText);
+        numberRangeSpinner = (Spinner) findViewById(R.id.numberRangeSpinner);
 
-            numberRangeEditText.setText(numberRange);
-            numberRangeEditText.addTextChangedListener(numberRangeEditTextListener);    //TextWatcher
+            switch (Integer.parseInt(numberRange)){
+
+                case 50:
+                    numberRangeSpinner.setSelection(0);
+                    break;
+
+                case 100:
+                    numberRangeSpinner.setSelection(1);
+                    break;
+
+                case 150:
+                    numberRangeSpinner.setSelection(2);
+                    break;
+
+                case 200:
+                    numberRangeSpinner.setSelection(3);
+                    break;
+
+                case 250:
+                    numberRangeSpinner.setSelection(4);
+                    break;
+
+                case 300:
+                    numberRangeSpinner.setSelection(5);
+                    break;
+
+            }
+
+            numberRangeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    numberRange = numberRangeSpinner.getSelectedItem().toString();
+                    intentParams[1] = numberRange;                                           //Set number range based on user input
+                    updatePreferences();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
 
         roundsSpinner = (Spinner) findViewById(R.id.roundsSpinner);
 
@@ -115,7 +151,19 @@ public class MainActivity extends Activity {
 
             }
 
-            addItemSelectedListenerForSpinner();                                //SpinnerListener
+            roundsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    rounds = roundsSpinner.getSelectedItem().toString();
+                    intentParams[2] = rounds;                                           //Set rounds based on user input
+                    updatePreferences();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });                                //SpinnerListener
 
         additionButton = (Button) findViewById(R.id.additionButton);
         subtractionButton = (Button) findViewById(R.id.subtractionButton);
@@ -157,48 +205,6 @@ public class MainActivity extends Activity {
             updatePreferences();
         }
     };
-
-    private TextWatcher numberRangeEditTextListener = new TextWatcher() {       //TextWatcher for numberRangeEditText (line 58)
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence numberRangeFromEditText, int i, int i2, int i3) {
-
-            numberRange = numberRangeFromEditText.toString();                   //Set numberRange based on user input
-            intentParams[1] = numberRange;
-            updatePreferences();
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-
-        }
-    };
-
-
-    private void addItemSelectedListenerForSpinner(){       //Listener for the Spinner
-
-        roundsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                rounds = roundsSpinner.getSelectedItem().toString();
-                intentParams[2] = rounds;                                           //Set rounds based on user input
-                updatePreferences();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-    }
-
 
     private View.OnClickListener onButtonsClicked = new View.OnClickListener() {
         @Override
@@ -283,13 +289,10 @@ public class MainActivity extends Activity {
     private boolean getConnectivity(){
 
         ConnectivityManager cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        if(cManager.getActiveNetworkInfo() != null && cManager.getActiveNetworkInfo().isConnected()){
-            return true;
-        }else{
-            return false;
-        }
+        return cManager.getActiveNetworkInfo() != null && cManager.getActiveNetworkInfo().isConnected();
 
-    }
+       }
+
 
 
     @Override
