@@ -366,7 +366,7 @@ public class ExercisesActivity extends Activity {
             toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, -30 );
             toast.show();
 
-            points = points + (60 * (2.5 * (numberRange / 50) * difficulty) / rounds);      //Points calculation
+            points = points + (60 * (2.5 * (numberRange / 50) * difficulty));      //Points calculation
             pointsTextView.setText(getResources().getString(R.string.points_text_view) + "  " + df.format(points));
 
         }else{
