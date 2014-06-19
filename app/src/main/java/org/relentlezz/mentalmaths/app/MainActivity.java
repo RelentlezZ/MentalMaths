@@ -26,12 +26,13 @@ public class MainActivity extends Activity {
     public final static String ENTERED_DIFFICULTY = "org.relentlezz.mentalmaths.app.ENTERED_DIFFICULTY";     //Key pairs for shared prefs
     public final static String ENTERED_NUMBER_RANGE = "org.relentlezz.mentalmaths.app.ENTERED_NUMBER_RANGE";
     public final static String ENTERED_ROUNDS = "org.relentlezz.mentalmaths.app.ENTERED_ROUNDS";
+    public final static String NOTIFICATIONS_ENABLED = "org.relentlezz.mentalmaths.app.NOTIFICATIONS_ENABLED";
 
     //Declare variables
     private String[] intentParams = new String[4]; //Array for passing extra message
     String difficulty, numberRange, rounds, exerciseType;
     Toast toast;
-    boolean doubleBack, internet;
+    boolean doubleBack, internet, notifications;
 
     private SharedPreferences enteredParams;
 
@@ -299,6 +300,9 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        notifications = enteredParams.getBoolean(NOTIFICATIONS_ENABLED, true);
+        menu.findItem(R.id.action_notification).setChecked(notifications);
         return true;
     }
 
@@ -329,6 +333,14 @@ public class MainActivity extends Activity {
                     toast = Toast.makeText(MainActivity.this, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT);
                     toast.show();
                 }
+                return true;
+
+            case R.id.action_notification:
+                item.setChecked(!item.isChecked());
+                SharedPreferences.Editor editor = enteredParams.edit();
+                editor.putBoolean(NOTIFICATIONS_ENABLED, item.isChecked());
+                editor.commit();
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

@@ -15,6 +15,7 @@
     <string name="action_restart">Restart</string>
     <string name="action_reset">Reset Highscores</string>
     <string name="action_fun">Extra Fun</string>
+    <string name="action_notification">Notifications</string>
 
     <!-- Toasts -->
     <string name="number_range_toast_error">Enter a number range first</string>

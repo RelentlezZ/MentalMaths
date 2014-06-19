@@ -15,6 +15,7 @@
     <string name="action_restart">Neustart</string>
     <string name="action_reset">Highscores zurücksetzen</string>
     <string name="action_fun">Extra Spaß</string>
+    <string name="action_notification">Benachrichtigungen</string>
 
     <!-- Toasts -->
     <string name="number_range_toast_error">Zahlenbereich wird benötigt</string>
