@@ -24,8 +24,8 @@ public class HighScoreActivity extends FragmentActivity implements ActionBar.Tab
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_high_score);
 
         //Setup SharedPrefs
