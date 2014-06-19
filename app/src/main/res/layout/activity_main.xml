@@ -67,21 +67,16 @@
         <TextView android:id="@+id/numberRangeTextView"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
             android:text="@string/number_range_text_view"
             android:textColor="@color/white"/>
 
-        <EditText android:id="@+id/numberRangeEditText"
-            android:layout_weight="1"
+        <Spinner android:id="@+id/numberRangeSpinner"
+            android:layout_weight="0.7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:inputType="number"
-            android:textColor="@color/white"
-            android:digits="0123456789"
-            android:maxLength="6"
-            android:cursorVisible="false"
-            android:imeOptions="actionDone"/>
+            android:entries="@array/number_range_spinner"/>
 
     </LinearLayout>
 
@@ -112,12 +107,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/wrapper3"
-        android:layout_marginTop="6dp">
+        android:layout_marginTop="15dp">
 
         <Button android:id="@+id/additionButton"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/addition_button"
             android:background="@drawable/button_background"
             android:layout_marginRight="20dp"
@@ -126,7 +121,7 @@
         <Button android:id="@+id/subtractionButton"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/subtraction_button"
             android:background="@drawable/button_background"
             style="?android:attr/borderlessButtonStyle"/>
@@ -142,7 +137,7 @@
         <Button android:id="@+id/multiplicationButton"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/multiplication_button"
             android:background="@drawable/button_background"
             android:layout_marginRight="20dp"
@@ -151,7 +146,7 @@
         <Button android:id="@+id/divisionButton"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/division_button"
             android:background="@drawable/button_background"
             style="?android:attr/borderlessButtonStyle"/>
