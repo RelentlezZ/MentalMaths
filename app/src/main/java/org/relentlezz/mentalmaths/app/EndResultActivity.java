@@ -219,7 +219,7 @@ public class EndResultActivity extends Activity {
                 break;
         }
 
-        editor.commit();
+        editor.apply();
     }
 
 

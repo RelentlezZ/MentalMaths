@@ -187,7 +187,7 @@ public class MainActivity extends Activity {
         editor.putString(ENTERED_NUMBER_RANGE, numberRange);
         editor.putString(ENTERED_ROUNDS, rounds);
 
-        editor.commit();
+        editor.apply();
 
     }
 
@@ -339,7 +339,7 @@ public class MainActivity extends Activity {
                 item.setChecked(!item.isChecked());
                 SharedPreferences.Editor editor = enteredParams.edit();
                 editor.putBoolean(NOTIFICATIONS_ENABLED, item.isChecked());
-                editor.commit();
+                editor.apply();
                 return true;
 
             default:

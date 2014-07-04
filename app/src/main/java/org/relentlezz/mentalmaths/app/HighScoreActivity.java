@@ -119,7 +119,7 @@ public class HighScoreActivity extends FragmentActivity implements ActionBar.Tab
         editor.putString(EndResultActivity.HIGHSCORE_DIVISION_EASY, "x/xZx/0");
         editor.putString(EndResultActivity.HIGHSCORE_DIVISION_HARD, "x/xZx/0");
 
-        editor.commit();
+        editor.apply();
         finish();
         startActivity(getIntent());
     }
