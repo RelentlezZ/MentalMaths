@@ -10,6 +10,6 @@
     <color name="lime">#ff69ff83</color>
     <color name="orange">#ffee7621</color>
     <color name="darkBlue">#ff1f1f1f</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="black">#ff000000</color>
 
 </resources>

@@ -3,13 +3,9 @@ package org.relentlezz.mentalmaths.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -26,13 +22,12 @@ public class MainActivity extends Activity {
     public final static String ENTERED_DIFFICULTY = "org.relentlezz.mentalmaths.app.ENTERED_DIFFICULTY";     //Key pairs for shared prefs
     public final static String ENTERED_NUMBER_RANGE = "org.relentlezz.mentalmaths.app.ENTERED_NUMBER_RANGE";
     public final static String ENTERED_ROUNDS = "org.relentlezz.mentalmaths.app.ENTERED_ROUNDS";
-    public final static String NOTIFICATIONS_ENABLED = "org.relentlezz.mentalmaths.app.NOTIFICATIONS_ENABLED";
 
     //Declare variables
     private String[] intentParams = new String[4]; //Array for passing extra message
     String difficulty, numberRange, rounds, exerciseType;
     Toast toast;
-    boolean doubleBack, internet, notifications;
+    boolean doubleBack;
 
     private SharedPreferences enteredParams;
 
@@ -287,84 +282,4 @@ public class MainActivity extends Activity {
         }
     };
 
-    private boolean getConnectivity(){
-
-        ConnectivityManager cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        return cManager.getActiveNetworkInfo() != null && cManager.getActiveNetworkInfo().isConnected();
-
-       }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-
-        notifications = enteredParams.getBoolean(NOTIFICATIONS_ENABLED, true);
-        menu.findItem(R.id.action_notification).setChecked(notifications);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch(item.getItemId()){
-
-            case R.id.action_credits:
-                if(toast != null) {
-                    toast.cancel();
-                }
-                toast = Toast.makeText(MainActivity.this, getResources().getString(R.string.credits_toast), Toast.LENGTH_LONG);
-                toast.show();
-                return true;
-
-            case R.id.action_fun:
-                internet = getConnectivity();
-                if(internet) {
-                    WebView mWebView = new WebView(getApplicationContext());
-                    mWebView.loadUrl("http://www.physik-lk.widukindgymnasium.de");
-                    setContentView(mWebView);
-                }else{
-                    if(toast != null) {
-                        toast.cancel();
-                    }
-                    toast = Toast.makeText(MainActivity.this, getResources().getString(R.string.no_internet_connection), Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-                return true;
-
-            case R.id.action_notification:
-                item.setChecked(!item.isChecked());
-                SharedPreferences.Editor editor = enteredParams.edit();
-                editor.putBoolean(NOTIFICATIONS_ENABLED, item.isChecked());
-                editor.apply();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
-    public void onBackPressed(){
-        onCreate(null);
-        if(doubleBack) {
-            super.onBackPressed();
-        }
-        doubleBack = true;
-        if(toast != null){
-            toast.cancel();
-        }
-        toast = Toast.makeText(MainActivity.this, getResources().getString(R.string.double_press_back), Toast.LENGTH_SHORT);
-        toast.show();
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBack = false;
-            }
-        }, 2000);
-    }
 }

@@ -3,8 +3,10 @@
 
     <!-- Standard Values (English) -->
 
+
     <!-- General -->
     <string name="app_name">Mental Maths</string>
+
     <string name="title_activity_exercises">Exercises</string>
     <string name="title_activity_end_result">Evaluation</string>
     <string name="title_activity_high_score">Highscores</string>
@@ -34,6 +36,14 @@
     <!-- Notifications -->
     <string name="even_more_fun">Even more extra fun!!!</string>
 
+    <!-- StartScreen -->
+    <string name="play_button">Train</string>
+    <string name="extra_fun_button">Extra Fun</string>
+    <string name="music_toggle_on">Music On</string>
+    <string name="music_toggle_off">Music Off</string>
+    <string name="notif_toggle_on">Notifications On</string>
+    <string name="notif_toggle_off">Notifications Off</string>
+
     <!-- SplashScreen -->
     <string name="app_name_english">Mental Maths</string>
     <string name="created_by">Created by Sebastian Maier</string>
@@ -45,6 +55,7 @@
     <string name="easy_text_view">Easy</string>
     <string name="hard_text_view">Hard</string>
     <string name="number_range_text_view">Number range (up to):</string>
+
     <string-array name="number_range_spinner">
         <item>50</item>
         <item>100</item>
@@ -53,7 +64,9 @@
         <item>250</item>
         <item>300</item>
     </string-array>
+
     <string name="rounds_text_view">How many exercises do you want to do?</string>
+
     <string-array name="rounds_entries_spinner">
         <item>5</item>
         <item>10</item>
@@ -62,6 +75,7 @@
         <item>25</item>
         <item>30</item>
     </string-array>
+
     <string name="addition_button">Addition</string>
     <string name="subtraction_button">Subtraction</string>
     <string name="multiplication_button">Multiplication</string>

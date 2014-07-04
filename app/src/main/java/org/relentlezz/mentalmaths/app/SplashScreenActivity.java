@@ -20,12 +20,12 @@ public class SplashScreenActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         notificationToggle = getSharedPreferences("settings", MODE_PRIVATE);
-        notificationsEnabled = notificationToggle.getBoolean(MainActivity.NOTIFICATIONS_ENABLED, true);
+        notificationsEnabled = notificationToggle.getBoolean(StartScreenActivity.NOTIFICATIONS_ENABLED, true);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreenActivity.this, StartScreenActivity.class);
                 startActivity(intent);
                 finish();
             }

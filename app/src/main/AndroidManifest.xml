@@ -3,7 +3,7 @@
     package="org.relentlezz.mentalmaths.app" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,34 +11,39 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="org.relentlezz.mentalmaths.app.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="org.relentlezz.mentalmaths.app.ExercisesActivity"
+            android:name=".ExercisesActivity"
             android:label="@string/title_activity_exercises"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="org.relentlezz.mentalmaths.app.EndResultActivity"
+            android:name=".EndResultActivity"
             android:label="@string/title_activity_end_result"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="org.relentlezz.mentalmaths.app.HighScoreActivity"
+            android:name=".HighScoreActivity"
             android:label="@string/title_activity_high_score"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="org.relentlezz.mentalmaths.app.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".StartScreenActivity"
+            android:label="@string/title_activity_start_screen"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
     </application>
 

@@ -5,6 +5,7 @@
 
     <!-- General -->
     <string name="app_name">Kopfrechnen!</string>
+    <string name="title_activity_start_screen">Start Screen</string>
     <string name="title_activity_exercises">Aufgaben</string>
     <string name="title_activity_end_result">Auswertung</string>
     <string name="title_activity_high_score">Highscores</string>
@@ -33,6 +34,14 @@
 
     <!-- Notifications -->
     <string name="even_more_fun">Noch mehr extra Spaß!!!</string>
+
+    <!-- StartScreen -->
+    <string name="play_button">Rigoros Trainieren</string>
+    <string name="extra_fun_button">Extra Fun</string>
+    <string name="music_toggle_on">Musik An</string>
+    <string name="music_toggle_off">Musik Aus</string>
+    <string name="notif_toggle_on">Benachrichtigungen An</string>
+    <string name="notif_toggle_off">Benachrichtigungen Aus</string>
 
     <!-- SplashScreen -->
     <string name="app_name_english">Mental Maths</string>
