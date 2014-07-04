@@ -6,10 +6,11 @@
 
     <!-- General -->
     <string name="app_name">Mental Maths</string>
-
+    <string name="title_activity_start_screen">Start Screen</string>
     <string name="title_activity_exercises">Exercises</string>
     <string name="title_activity_end_result">Evaluation</string>
     <string name="title_activity_high_score">Highscores</string>
+    <string name="title_activity_extra_fun">ExtraFunActivity</string>
 
     <!-- Actions -->
     <string name="action_settings">Settings</string>

@@ -9,6 +9,7 @@
     <string name="title_activity_exercises">Aufgaben</string>
     <string name="title_activity_end_result">Auswertung</string>
     <string name="title_activity_high_score">Highscores</string>
+    <string name="title_activity_extra_fun">ExtraFunActivity</string>
 
     <!-- Actions -->
     <string name="action_settings">Einstellungen</string>
