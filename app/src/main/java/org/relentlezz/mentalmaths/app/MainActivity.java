@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -27,7 +26,6 @@ public class MainActivity extends Activity {
     private String[] intentParams = new String[4]; //Array for passing extra message
     String difficulty, numberRange, rounds, exerciseType;
     Toast toast;
-    boolean doubleBack;
 
     private SharedPreferences enteredParams;
 
