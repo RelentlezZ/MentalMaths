@@ -296,13 +296,4 @@ public class EndResultActivity extends Activity {
 
         }
     };
-
-
-    /*@Override
-    public void onBackPressed(){                        //Not necessary anymore
-
-       startMainActivity();
-
-    } */
-
 }
