@@ -27,7 +27,7 @@ public class EndResultActivity extends Activity {
     public final static String HIGHSCORE_SUBTRACTION_HARD = "org.relentlezz.mentalmaths.app.HIGHSCORE_SUBTRACTION_HARD";
     public final static String HIGHSCORE_MULTIPLICATION_EASY = "org.relentlezz.mentalmaths.app.HIGHSCORE_MULTIPLICATION_EASY";
     public final static String HIGHSCORE_MULTIPLICATION_HARD = "org.relentlezz.mentalmaths.app.HIGHSCORE_MULTIPLICATION_HARD";
-    public final static String HIGHSCORE_DIVISION_EASY = "org.relentlezz.mentalmaths.app.HIGHSCORE_DIVISION_HARD";
+    public final static String HIGHSCORE_DIVISION_EASY = "org.relentlezz.mentalmaths.app.HIGHSCORE_DIVISION_EASY";
     public final static String HIGHSCORE_DIVISION_HARD = "org.relentlezz.mentalmaths.app.HIGHSCORE_DIVISION_HARD";
 
 
@@ -81,7 +81,7 @@ public class EndResultActivity extends Activity {
         currentScoreHolder = getHighscore(difficulty, exerciseType)[0];
         currentHighScore = Double.parseDouble(getHighscore(difficulty, exerciseType)[1]);
 
-        maxPoints = rounds * (60 * (2.5 * (numberRange / 50) * difficulty) / rounds);
+        maxPoints = rounds * (60 * (2.5 * (numberRange / 50) * difficulty));
 
         //Initialize views
         pointsReachedTextView = (TextView) findViewById(R.id.pointsReachedTextView);
@@ -182,8 +182,8 @@ public class EndResultActivity extends Activity {
                 break;
 
             case 4:
-            prefScore = highScores.getString(d == 1?HIGHSCORE_DIVISION_EASY:HIGHSCORE_DIVISION_HARD, "x/xZx/0");
-            break;
+                prefScore = highScores.getString(d == 1?HIGHSCORE_DIVISION_EASY:HIGHSCORE_DIVISION_HARD, "x/xZx/0");
+                break;
 
             default:
                 prefScore = "x/xZx/0";
@@ -215,7 +215,7 @@ public class EndResultActivity extends Activity {
                 break;
 
             case 4:
-                editor.putString(d == 1? HIGHSCORE_DIVISION_EASY:HIGHSCORE_DIVISION_HARD, savedHighscore);
+                editor.putString(d == 1?HIGHSCORE_DIVISION_EASY:HIGHSCORE_DIVISION_HARD, savedHighscore);
                 break;
         }
 

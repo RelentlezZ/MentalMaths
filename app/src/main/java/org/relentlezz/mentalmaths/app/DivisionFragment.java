@@ -1,7 +1,6 @@
 package org.relentlezz.mentalmaths.app;
 
 
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,10 +11,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- *
- */
 public class DivisionFragment extends Fragment {
 
 
