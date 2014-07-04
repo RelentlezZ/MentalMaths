@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
         android:layout_below="@id/additionHardScoreTextView"
-        android:layout_marginTop="50dp"
+        android:layout_margin="30dp"
         android:onClick="playAgain"
         android:text="@string/play_again_button"/>
 
