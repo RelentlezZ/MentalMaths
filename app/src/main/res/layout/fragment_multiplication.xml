@@ -21,8 +21,7 @@
         android:layout_below="@id/multiplicationEasyTextView"
         android:layout_marginTop="15dp"
         android:gravity="center"
-        android:textSize="16sp"
-        android:text="test"/>
+        android:textSize="16sp"/>
 
     <TextView android:id="@+id/multiplicationHardTextView"
         android:layout_width="match_parent"
@@ -39,8 +38,7 @@
         android:layout_below="@id/multiplicationHardTextView"
         android:layout_marginTop="15dp"
         android:gravity="center"
-        android:textSize="16sp"
-        android:text="test"/>
+        android:textSize="16sp"/>
 
     <Button android:id="@+id/playAgainMultiplicationHighScoreButton"
         android:layout_width="match_parent"

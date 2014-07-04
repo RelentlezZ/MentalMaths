@@ -5,6 +5,7 @@
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
         <item name="android:actionBarStyle">@style/actionBarStyle</item>
+        <item name="android:actionBarTabStyle">@style/actionBarTabStyle</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
@@ -15,6 +16,12 @@
     <style name="actionBarStyle" parent="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse">
         <item name="android:background">@color/darkBlue</item>
         <item name="android:titleTextStyle">@style/titleTextStyle</item>
+    </style>
+
+    <style name="actionBarTabStyle" parent="Widget.AppCompat.ActionBar.TabView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">7dp</item>
+        <item name="android:minWidth">0dp</item>
     </style>
 
     <style name="titleTextStyle">
