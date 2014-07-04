@@ -19,7 +19,7 @@ public class SplashScreenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        notificationToggle = getSharedPreferences("enteredParams", MODE_PRIVATE);
+        notificationToggle = getSharedPreferences("settings", MODE_PRIVATE);
         notificationsEnabled = notificationToggle.getBoolean(MainActivity.NOTIFICATIONS_ENABLED, true);
 
         new Handler().postDelayed(new Runnable() {

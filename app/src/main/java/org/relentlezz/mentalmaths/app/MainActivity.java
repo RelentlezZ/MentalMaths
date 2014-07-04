@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Initialize variables
-        enteredParams = getSharedPreferences("enteredParams", MODE_PRIVATE);
+        enteredParams = getSharedPreferences("settings", MODE_PRIVATE);
 
         difficulty = enteredParams.getString(ENTERED_DIFFICULTY, "0");
         numberRange = enteredParams.getString(ENTERED_NUMBER_RANGE, "100");
