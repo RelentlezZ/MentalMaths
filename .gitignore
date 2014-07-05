@@ -7,6 +7,7 @@ build
 *.iml
 *.apk
 *.dex
+*.mp3
 proguard-rules.txt
 MentalMaths.iml
 
