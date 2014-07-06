@@ -3,6 +3,8 @@ package org.relentlezz.mentalmaths.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,13 +23,16 @@ public class MainActivity extends Activity {
     public final static String ENTERED_DIFFICULTY = "org.relentlezz.mentalmaths.app.ENTERED_DIFFICULTY";     //Key pairs for shared prefs
     public final static String ENTERED_NUMBER_RANGE = "org.relentlezz.mentalmaths.app.ENTERED_NUMBER_RANGE";
     public final static String ENTERED_ROUNDS = "org.relentlezz.mentalmaths.app.ENTERED_ROUNDS";
+    public final static String MAIN_MUSIC = "org.relentlezz.mentalmaths.app.MAIN_MUSIC";
 
     //Declare variables
     private String[] intentParams = new String[4]; //Array for passing extra message
     String difficulty, numberRange, rounds, exerciseType;
     Toast toast;
 
-    private SharedPreferences enteredParams;
+    public final MusicPlayer mPlayer = new MusicPlayer();
+
+    private SharedPreferences settings;
 
     //Declare views
     Spinner numberRangeSpinner;
@@ -48,11 +53,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Initialize variables
-        enteredParams = getSharedPreferences("settings", MODE_PRIVATE);
+        settings = getSharedPreferences("settings", MODE_PRIVATE);
 
-        difficulty = enteredParams.getString(ENTERED_DIFFICULTY, "0");
-        numberRange = enteredParams.getString(ENTERED_NUMBER_RANGE, "100");
-        rounds = enteredParams.getString(ENTERED_ROUNDS, "10");
+        difficulty = settings.getString(ENTERED_DIFFICULTY, "0");
+        numberRange = settings.getString(ENTERED_NUMBER_RANGE, "100");
+        rounds = settings.getString(ENTERED_ROUNDS, "10");
 
         intentParams[0] = difficulty;
         intentParams[1] = numberRange;
@@ -171,10 +176,26 @@ public class MainActivity extends Activity {
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(settings.getBoolean(MAIN_MUSIC, true) && !mPlayer.getStatus().equals(AsyncTask.Status.RUNNING)){
+            mPlayer.execute();
+        }
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean(MAIN_MUSIC, false);
+        editor.apply();
+    }
+
 
     private void updatePreferences() {
 
-        SharedPreferences.Editor editor = enteredParams.edit();
+        SharedPreferences.Editor editor = settings.edit();
 
         editor.putString(ENTERED_DIFFICULTY, difficulty);
         editor.putString(ENTERED_NUMBER_RANGE, numberRange);
@@ -279,5 +300,19 @@ public class MainActivity extends Activity {
             }
         }
     };
+
+    class MusicPlayer extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            final MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.boss);
+            if(mediaPlayer != null && !mediaPlayer.isPlaying()){
+                mediaPlayer.setLooping(true);
+                mediaPlayer.setVolume(100, 100);
+                mediaPlayer.start();
+            }
+            return null;
+        }
+    }
 
 }

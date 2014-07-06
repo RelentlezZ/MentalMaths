@@ -42,6 +42,10 @@ public class StartScreenActivity extends Activity{
         notifs = settings.getBoolean(NOTIFICATIONS_ENABLED, true);
         doubleBack = false;
 
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean(MainActivity.MAIN_MUSIC, music);
+        editor.apply();
+
         playButton = (Button) findViewById(R.id.playButton);
         showHighscoresButton = (Button) findViewById(R.id.showHighscoresButton);
         extraFunButton = (Button) findViewById(R.id.extraFunButton);
@@ -98,6 +102,7 @@ public class StartScreenActivity extends Activity{
                 case R.id.musicCheckBox:
                     musicCheckBox.setText(musicCheckBox.isChecked()?getResources().getString(R.string.music_toggle_on):getResources().getString(R.string.music_toggle_off));
                     editor.putBoolean(MUSIC_ENABLED, musicCheckBox.isChecked());
+                    editor.putBoolean(MainActivity.MAIN_MUSIC, musicCheckBox.isChecked());
                     editor.apply();
                     break;
 
