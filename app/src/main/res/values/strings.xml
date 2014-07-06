@@ -32,6 +32,7 @@
     <string name="wrong_toast">Wrong!</string>
     <string name="result_toast_error">Enter a result first</string>
     <string name="enter_name_first_toast">Enter your name first</string>
+    <string name="wrong_name_toast">Illegal Name</string>
     <string name="need_that_toast">Good decision</string>
 
     <!-- Notifications -->

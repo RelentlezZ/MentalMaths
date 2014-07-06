@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -235,6 +236,7 @@ public class EndResultActivity extends Activity {
             final EditText nameInput = new EditText(EndResultActivity.this);
             nameInput.setHint(getResources().getString(R.string.name_hint));
             nameInput.setInputType(InputType.TYPE_CLASS_TEXT);
+            nameInput.setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
             saveDialog.setView(nameInput);
             final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
@@ -245,17 +247,18 @@ public class EndResultActivity extends Activity {
                     if(nameInput.getText().toString().length() > 0){
 
                         name = nameInput.getText().toString();
-                        setHighscore(name, pointsTimeRatio, difficulty);
-                        Toast.makeText(EndResultActivity.this, getResources().getString(R.string.saved), Toast.LENGTH_LONG).show();
-                        saveHighScoreButton.setVisibility(View.INVISIBLE);
-                        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-
+                        if(name.contains("/xZx/")){
+                            Toast.makeText(EndResultActivity.this, getResources().getString(R.string.wrong_name_toast), Toast.LENGTH_SHORT).show();
+                            nameInput.setText("");
+                        }else {
+                            setHighscore(name, pointsTimeRatio, difficulty);
+                            Toast.makeText(EndResultActivity.this, getResources().getString(R.string.saved), Toast.LENGTH_LONG).show();
+                            saveHighScoreButton.setVisibility(View.INVISIBLE);
+                            imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                        }
                     }else{
-
                         Toast.makeText(EndResultActivity.this, getResources().getString(R.string.enter_name_first_toast), Toast.LENGTH_LONG).show();
-
                     }
-
                     }
                 });
 
